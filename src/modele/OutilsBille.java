@@ -1,4 +1,4 @@
-package exodecorateur_angryballs.maladroit.modele;
+package modele;
 
 import java.util.Vector;
 
@@ -9,7 +9,7 @@ import mesmaths.mecanique.MecaniquePoint;
 /**
  * 
  * 
- * Opérations utiles sur les billes
+ * Operations utiles sur les billes
  * 
  *  ICI : IL N'Y A RIEN A CHANGER 
  *  
@@ -20,7 +20,7 @@ public class OutilsBille
 /**
  * @param billes est la liste de TOUTES les billes en mouvement
  * @param cetteBille est l'une d'entre elles.
- * @return la liste des autres billes que cetteBille, c'est-à-dire la liste de toutes les billes sauf cetteBille 
+ * @return la liste des autres billes que cetteBille, c'est-e-dire la liste de toutes les billes sauf cetteBille 
  * 
  * */
 public static Vector<Bille> autresBilles(Bille cetteBille, Vector<Bille> billes)
@@ -43,26 +43,26 @@ return autresBilles;
 
 
 /**
- * @param cetteBille : une bille particulière
+ * @param cetteBille : une bille particuliere
  * @param billes : une liste de billes, cette liste peut contenir cettebille
  *
- * gestion de l'éventuelle  collision de cette bille avec les autres billes
+ * gestion de l'eventuelle  collision de cette bille avec les autres billes
  *
  * billes est la liste de toutes les billes en mouvement
  * 
- * Le comportement par défaut est le choc parfaitement élastique (c-à-d rebond sans amortissement)
+ * Le comportement par defaut est le choc parfaitement elastique (c-e-d rebond sans amortissement)
  * 
- * @return true si il y a collision et dans ce cas les positions et vecteurs vitesses des 2 billes impliquées dans le choc sont modifiées
- * si renvoie false, il n'y a pas de collision et les billes sont laissées intactes 
+ * @return true si il y a collision et dans ce cas les positions et vecteurs vitesses des 2 billes impliquees dans le choc sont modifiees
+ * si renvoie false, il n'y a pas de collision et les billes sont laissees intactes 
  * */
 public static  boolean gestionCollisionBilleBille(Bille cetteBille, Vector<Bille> billes)
 {
-//--- on récupère d'abord dans autresBilles toutes les billes sauf cetteBille ----
+//--- on recupere d'abord dans autresBilles toutes les billes sauf cetteBille ----
 
 Vector<Bille> autresBilles = OutilsBille.autresBilles(cetteBille, billes);
 
-//--- on cherche à présent la 1ère des autres billes avec laquelle cetteBille est en collision ---------------------
-//-------------- on suppose qu'il ne peut y avoir de collision qui implique plus de deux billes à la fois ---------------
+//--- on cherche e present la 1ere des autres billes avec laquelle cetteBille est en collision ---------------------
+//-------------- on suppose qu'il ne peut y avoir de collision qui implique plus de deux billes e la fois ---------------
 
 Bille billeCourante;
 
@@ -80,24 +80,24 @@ return false;
 
 
 /**
- * @param cetteBille : une bille particulière
+ * @param cetteBille : une bille particuliere
  * @param billes : une liste de billes, cette liste peut contenir cettebille
  * 
  * On suppose que cetteBille subit l'attraction gravitationnelle due aux billes contenues dans "billes" autres que cetteBille.
  * 
- * tâche : calcule a, le vecteur accélération subi par cetteBille résultant de l'attraction par les autres billes de la liste.
+ * teche : calcule a, le vecteur acceleration subi par cetteBille resultant de l'attraction par les autres billes de la liste.
  * 
- * @return a : le vecteur accélération résultant
+ * @return a : le vecteur acceleration resultant
  * 
  * */
-public static Vecteur gestionAccélérationNewton(Bille cetteBille, Vector<Bille> billes)
+public static Vecteur gestionAccelerationNewton(Bille cetteBille, Vector<Bille> billes)
 {
 
-//--- on récupère d'abord dans autresBilles toutes les billes sauf celle-ci ----
+//--- on recupere d'abord dans autresBilles toutes les billes sauf celle-ci ----
 
 Vector<Bille> autresBilles = OutilsBille.autresBilles(cetteBille, billes);
 
-//-------------- à présent on récupère les masses et les positions des autres billes ------------------
+//-------------- e present on recupere les masses et les positions des autres billes ------------------
 int i;
 Bille billeCourante;
 
@@ -113,8 +113,8 @@ for ( i = 0; i < d; ++i)
     C[i] = billeCourante.getPosition();
     }
 
-//------------------ à présent on calcule le champ de gravité exercé par les autres billes sur cette bille ------------------
+//------------------ e present on calcule le champ de gravite exerce par les autres billes sur cette bille ------------------
 
-return  MecaniquePoint.champGravitéGlobal( cetteBille.getPosition(),  masses, C);
+return  MecaniquePoint.champGraviteGlobal( cetteBille.getPosition(),  masses, C);
 }
 }

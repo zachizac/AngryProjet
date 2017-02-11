@@ -1,4 +1,4 @@
-package exodecorateur_angryballs.maladroit.modele;
+package modele;
 
 import java.awt.Color;
 
@@ -7,7 +7,7 @@ import mesmaths.geometrie.base.Vecteur;
 
 /**
  * 
- * Bille traversant les murs et subissant un mouvement rectiligne uniforme (mouvment en ligne droite à vitesse constante)
+ * Bille traversant les murs et subissant un mouvement rectiligne uniforme (mouvment en ligne droite e vitesse constante)
  * 
  * 
  *  A MODIFIER
@@ -31,9 +31,9 @@ public class BilleMvtRUPasseMurailles extends Bille
 
 @Override
 public void collisionContour(double abscisseCoinHautGauche,
-        double ordonnéeCoinHautGauche, double largeur, double hauteur)
+        double ordonneeCoinHautGauche, double largeur, double hauteur)
 {
-Collisions.collisionBilleContourPasseMuraille( this.getPosition(), abscisseCoinHautGauche, ordonnéeCoinHautGauche, largeur, hauteur);
+Collisions.collisionBilleContourPasseMuraille( this.getPosition(), abscisseCoinHautGauche, ordonneeCoinHautGauche, largeur, hauteur);
 
 }
 

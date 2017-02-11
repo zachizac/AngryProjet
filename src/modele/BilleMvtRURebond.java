@@ -1,4 +1,4 @@
-package exodecorateur_angryballs.maladroit.modele;
+package modele;
 
 import java.awt.Color;
 
@@ -7,7 +7,7 @@ import mesmaths.geometrie.base.Vecteur;
 
 /**
  * 
- * Bille rebondissant sur les murs et subissant un mouvement rectiligne uniforme (mouvment en ligne droite à vitesse constante)
+ * Bille rebondissant sur les murs et subissant un mouvement rectiligne uniforme (mouvment en ligne droite e vitesse constante)
  * 
  * 
  *  A MODIFIER
@@ -25,9 +25,9 @@ super(centre, rayon, vitesse, couleur);
 
 @Override
 public void collisionContour(double abscisseCoinHautGauche,
-        double ordonnéeCoinHautGauche, double largeur, double hauteur)
+        double ordonneeCoinHautGauche, double largeur, double hauteur)
 {
-Collisions.collisionBilleContourAvecRebond( this.getPosition(), this.getRayon(), this.getVitesse(), abscisseCoinHautGauche, ordonnéeCoinHautGauche, largeur, hauteur);
+Collisions.collisionBilleContourAvecRebond( this.getPosition(), this.getRayon(), this.getVitesse(), abscisseCoinHautGauche, ordonneeCoinHautGauche, largeur, hauteur);
 
 }
 

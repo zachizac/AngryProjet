@@ -1,4 +1,4 @@
-package exodecorateur_angryballs.maladroit.modele;
+package modele;
 
 import java.awt.Color;
 import java.util.Vector;
@@ -9,7 +9,7 @@ import mesmaths.mecanique.MecaniquePoint;
 
 /**
  * 
- * Bille s'arrêtant sur les bords et subissant l'attraction des autres billes
+ * Bille s'arretant sur les bords et subissant l'attraction des autres billes
  * 
  * 
  *  A MODIFIER
@@ -27,21 +27,21 @@ super(position, rayon, vitesse, couleur);
 }
 
 /* (non-Javadoc)
- * @see decorateur_angryballs.modele.Bille#gestionAccélération(java.util.Vector)
+ * @see decorateur_angryballs.modele.Bille#gestionAcceleration(java.util.Vector)
  */
 @Override
-public void gestionAccélération(Vector<Bille> billes)
+public void gestionAcceleration(Vector<Bille> billes)
 {
-super.gestionAccélération(billes);                              // remise à zéro du vecteur accélération
-this.getAccélération().ajoute(OutilsBille.gestionAccélérationNewton(this, billes));     // contribution de l'accélération due à l'attraction des autres billes
+super.gestionAcceleration(billes);                              // remise e zero du vecteur acceleration
+this.getAcceleration().ajoute(OutilsBille.gestionAccelerationNewton(this, billes));     // contribution de l'acceleration due e l'attraction des autres billes
 }
 
 @Override
 public void collisionContour(double abscisseCoinHautGauche,
-        double ordonnéeCoinHautGauche, double largeur, double hauteur)
+        double ordonneeCoinHautGauche, double largeur, double hauteur)
 {
 Collisions.collisionBilleContourAvecArretHorizontal(this.getPosition(), this.getRayon(), this.getVitesse(), abscisseCoinHautGauche, largeur);
-Collisions.collisionBilleContourAvecArretVertical(this.getPosition(), this.getRayon(), this.getVitesse(), ordonnéeCoinHautGauche, hauteur);
+Collisions.collisionBilleContourAvecArretVertical(this.getPosition(), this.getRayon(), this.getVitesse(), ordonneeCoinHautGauche, hauteur);
 }
 
 }
