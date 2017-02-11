@@ -1,4 +1,4 @@
-package exodecorateur_angryballs.maladroit.vues;
+package vues;
 
 import java.awt.Canvas;
 import java.awt.Graphics;

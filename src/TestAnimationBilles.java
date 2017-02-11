@@ -1,5 +1,3 @@
-package exodecorateur_angryballs.maladroit;
-
 import java.awt.Color;
 import java.io.IOException;
 import java.util.Vector;
@@ -33,7 +31,7 @@ Bille bille2 = new BilleMvtRUPasseMurailles(centreBille2, rayonBille2, vitesseBi
 billes.add(bille2);
 
 
-double vmax2 = AnimationBilles.maxVitessesCarrées(billes);
+double vmax2 = AnimationBilles.maxVitessesCarrees(billes);
 double rayonmin2 = AnimationBilles.minRayons(billes);
 
 System.out.println("vmax2 = " + vmax2 + "rayonMin2 = " + rayonmin2);

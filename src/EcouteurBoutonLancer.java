@@ -1,5 +1,3 @@
-package exodecorateur_angryballs.maladroit;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

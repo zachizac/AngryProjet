@@ -1,13 +1,11 @@
-package exodecorateur_angryballs.maladroit;
-
 import java.util.Vector;
 
 import exodecorateur_angryballs.maladroit.modele.Bille;
 import exodecorateur_angryballs.maladroit.vues.VueBillard;
 
 /**
- * responsable de l'animation des billes, c-à-d responsable du mouvement de la liste des billes. met perpétuellement à jour les billes. 
- * gère le délai entre 2 mises à jour (deltaT) et prévient la vue responsable du dessin des billes qu'il faut mettre à jour la scène
+ * responsable de l'animation des billes, c-e-d responsable du mouvement de la liste des billes. met perpetuellement e jour les billes. 
+ * gere le delai entre 2 mises e jour (deltaT) et previent la vue responsable du dessin des billes qu'il faut mettre e jour la scene
  * 
  * ICI : IL N'Y A RIEN A CHANGER
  * */
@@ -17,7 +15,7 @@ public class AnimationBilles  implements Runnable
 
 Vector<Bille> billes;   // la liste de toutes les billes en mouvement 
 VueBillard vueBillard;    // la vue responsable du dessin des billes
-private Thread thread;    // pour lancer et arrêter les billes
+private Thread thread;    // pour lancer et arreter les billes
 
 
 private static final double COEFF = 0.5;
@@ -30,7 +28,7 @@ public AnimationBilles(Vector<Bille> billes, VueBillard vueBillard)
 {
 this.billes = billes;
 this.vueBillard = vueBillard;
-this.thread = null;     //est-ce utile ?
+this.thread = null;     //est-ce utile e
 }
 
 @Override
@@ -38,48 +36,48 @@ public void run()
 {
 try
     {
-    double deltaT;  // délai entre 2 mises à jour de la liste des billes
+    double deltaT;  // delai entre 2 mises e jour de la liste des billes
     Bille billeCourante;
     
-    double minRayons = AnimationBilles.minRayons(billes);   //nécessaire au calcul de deltaT
-    double minRayons2 = minRayons*minRayons;                //nécessaire au calcul de deltaT
+    double minRayons = AnimationBilles.minRayons(billes);   //necessaire au calcul de deltaT
+    double minRayons2 = minRayons*minRayons;                //necessaire au calcul de deltaT
     
     while (!Thread.interrupted())                           // gestion du mouvement
         {
-        //deltaT = COEFF*minRayons2/(1+maxVitessesCarrées(billes));       // mise à jour deltaT. L'addition + 1 est une astuce pour éviter les divisions par zéro
+        //deltaT = COEFF*minRayons2/(1+maxVitessesCarrees(billes));       // mise e jour deltaT. L'addition + 1 est une astuce pour eviter les divisions par zero
         
                                                                         //System.err.println("deltaT = " + deltaT);
         deltaT = 10;
         
         int i;
-        for ( i = 0; i < billes.size(); ++i)    // mise à jour de la liste des billes
+        for ( i = 0; i < billes.size(); ++i)    // mise e jour de la liste des billes
             {
             billeCourante = billes.get(i);
-            billeCourante.déplacer(deltaT);                 // mise à jour position et vitesse de cette bille
-            billeCourante.gestionAccélération(billes);      // calcul de l'accélération subie par cette bille
+            billeCourante.deplacer(deltaT);                 // mise e jour position et vitesse de cette bille
+            billeCourante.gestionAcceleration(billes);      // calcul de l'acceleration subie par cette bille
             billeCourante.gestionCollisionBilleBille(billes);
             billeCourante.collisionContour( 0, 0, vueBillard.largeurBillard(), vueBillard.hauteurBillard());        //System.err.println("billes = " + billes);
             }
         
-        vueBillard.miseAJour();                                // on prévient la vue qu'il faut redessiner les billes
+        vueBillard.miseAJour();                                // on previent la vue qu'il faut redessiner les billes
       
        
-        Thread.sleep((int)deltaT);                          // deltaT peut être considéré comme le délai entre 2 flashes d'un stroboscope qui éclairerait la scène
+        Thread.sleep((int)deltaT);                          // deltaT peut etre considere comme le delai entre 2 flashes d'un stroboscope qui eclairerait la scene
         }
     }
 
 catch (InterruptedException e)
     {
-    /* arrêt normal, il n'y a rien à faire dans ce cas */
+    /* arret normal, il n'y a rien e faire dans ce cas */
     }
 
 }
 
 /**
- * calcule le maximum de de la norme carrée (pour faire moins de calcul) des vecteurs vitesse de la liste de billes
+ * calcule le maximum de de la norme carree (pour faire moins de calcul) des vecteurs vitesse de la liste de billes
  * 
  * */
-static double maxVitessesCarrées(Vector<Bille> billes)
+static double maxVitessesCarrees(Vector<Bille> billes)
 {
 double vitesse2Max = 0;
 
@@ -87,7 +85,7 @@ int i;
 double vitesse2Courante;
 
 for ( i = 0; i < billes.size(); ++i)
-    if ( (vitesse2Courante = billes.get(i).vitesse.normeCarrée()) > vitesse2Max)
+    if ( (vitesse2Courante = billes.get(i).vitesse.normeCarree()) > vitesse2Max)
        vitesse2Max = vitesse2Courante; 
 
 return vitesse2Max;
@@ -122,7 +120,7 @@ if (this.thread == null)
     }
 }
 
-public void arrêterAnimation()
+public void arreterAnimation()
 {
 if (thread != null)
     {

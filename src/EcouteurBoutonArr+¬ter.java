@@ -1,5 +1,3 @@
-package exodecorateur_angryballs.maladroit;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,11 +7,11 @@ import java.awt.event.ActionListener;
  *  
  *  */
 
-public class EcouteurBoutonArrêter implements ActionListener
+public class EcouteurBoutonArreter implements ActionListener
 {
 AnimationBilles animationBilles;
 
-public EcouteurBoutonArrêter(AnimationBilles animationBilles)
+public EcouteurBoutonArreter(AnimationBilles animationBilles)
     {
     this.animationBilles = animationBilles;
     }
@@ -21,7 +19,7 @@ public EcouteurBoutonArrêter(AnimationBilles animationBilles)
 @Override
 public void actionPerformed(ActionEvent e)
 {
-this.animationBilles.arrêterAnimation();
+this.animationBilles.arreterAnimation();
 }
 
 }
