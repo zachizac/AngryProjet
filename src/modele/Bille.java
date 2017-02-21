@@ -31,15 +31,15 @@ public abstract class Bille {
 
 
     /**
-     * @param centre
+     * @param position
      * @param rayon
      * @param vitesse
      * @param acceleration
      * @param couleur
      */
-    protected Bille(Vecteur centre, double rayon, Vecteur vitesse,
+    protected Bille(Vecteur position, double rayon, Vecteur vitesse,
                     Vecteur acceleration, Color couleur) {
-        this.position = centre;
+        this.position = position;
         this.rayon = rayon;
         this.vitesse = vitesse;
         this.acceleration = acceleration;
