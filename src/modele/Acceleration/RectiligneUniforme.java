@@ -5,6 +5,6 @@ import modele.DecorateurAcceleration;
 /**
  * Created by Zachizac on 21/02/2017.
  */
-public class RectiligneUniforme extends DecorateurAcceleration {
+public abstract class RectiligneUniforme extends DecorateurAcceleration {
 
 }
