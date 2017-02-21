@@ -9,7 +9,7 @@ import java.util.Vector;
  */
 public abstract class DecorateurAcceleration {
 
-    private BilleTest bille;
+    private Bille bille;
 
     /**
      * calcul (c-e-d mise e jour) eventuel  du vecteur acceleration.
