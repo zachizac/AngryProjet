@@ -3,7 +3,7 @@ package vues;
 import java.awt.Frame;
 import java.util.Vector;
 
-import exodecorateur_angryballs.maladroit.modele.Bille;
+import modele.Bille;
 
 
 public class TestCadreAngryBallsSeul

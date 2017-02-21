@@ -115,6 +115,6 @@ for ( i = 0; i < d; ++i)
 
 //------------------ e present on calcule le champ de gravite exerce par les autres billes sur cette bille ------------------
 
-return  MecaniquePoint.champGraviteGlobal( cetteBille.getPosition(),  masses, C);
+return  MecaniquePoint.champGravitéGlobal( cetteBille.getPosition(),  masses, C);
 }
 }

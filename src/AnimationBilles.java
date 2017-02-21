@@ -1,7 +1,7 @@
 import java.util.Vector;
 
-import exodecorateur_angryballs.maladroit.modele.Bille;
-import exodecorateur_angryballs.maladroit.vues.VueBillard;
+import modele.Bille;
+import vues.VueBillard;
 
 /**
  * responsable de l'animation des billes, c-e-d responsable du mouvement de la liste des billes. met perpetuellement e jour les billes. 
@@ -85,7 +85,7 @@ int i;
 double vitesse2Courante;
 
 for ( i = 0; i < billes.size(); ++i)
-    if ( (vitesse2Courante = billes.get(i).vitesse.normeCarree()) > vitesse2Max)
+    if ( (vitesse2Courante = billes.get(i).vitesse.normeCarrée()) > vitesse2Max)
        vitesse2Max = vitesse2Courante; 
 
 return vitesse2Max;

@@ -1,4 +1,4 @@
-import exodecorateur_angryballs.maladroit.vues.VueBillard;
+import vues.VueBillard;
 
 public class VueBillardFactice implements VueBillard
 {

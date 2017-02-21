@@ -3,15 +3,14 @@ import java.util.Vector;
 
 import mesmaths.geometrie.base.Vecteur;
 
-import exodecorateur_angryballs.maladroit.modele.Bille;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtNewtonArret;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtNewtonFrottementRebond;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtRUPasseMurailles;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtRURebond;
-import exodecorateur_angryballs.maladroit.modele.BilleMvtPesanteurFrottementRebond;
-import exodecorateur_angryballs.maladroit.vues.CadreAngryBalls;
-import exodecorateur_angryballs.maladroit.vues.VueBillard;
-import exodecorateur_angryballs.modele.*;
+import modele.Bille;
+import modele.BilleMvtNewtonArret;
+import modele.BilleMvtNewtonFrottementRebond;
+import modele.BilleMvtRUPasseMurailles;
+import modele.BilleMvtRURebond;
+import modele.BilleMvtPesanteurFrottementRebond;
+import vues.CadreAngryBalls;
+import vues.VueBillard;
 
 /**
  * Gestion d'une liste de billes en mouvement ayant toutes un comportement different
@@ -54,19 +53,19 @@ Vecteur p0, p1, p2, p3, p4,  v0, v1, v2, v3, v4;    // les positions des centres
 
 //------------------- creation des vecteurs position des billes ---------------------------------
 
-p0 = Vecteur.creationAleatoire(0, 0, xMax, yMax);
-p1 = Vecteur.creationAleatoire(0, 0, xMax, yMax);
-p2 = Vecteur.creationAleatoire(0, 0, xMax, yMax);
-p3 = Vecteur.creationAleatoire(0, 0, xMax, yMax);
-p4 = Vecteur.creationAleatoire(0, 0, xMax, yMax);
+p0 = Vecteur.créationAléatoire(0, 0, xMax, yMax);
+p1 = Vecteur.créationAléatoire(0, 0, xMax, yMax);
+p2 = Vecteur.créationAléatoire(0, 0, xMax, yMax);
+p3 = Vecteur.créationAléatoire(0, 0, xMax, yMax);
+p4 = Vecteur.créationAléatoire(0, 0, xMax, yMax);
 
 //------------------- creation des vecteurs vitesse des billes ---------------------------------
 
-v0 = Vecteur.creationAleatoire(-vMax, -vMax, vMax, vMax);
-v1 = Vecteur.creationAleatoire(-vMax, -vMax, vMax, 0);
-v2 = Vecteur.creationAleatoire(-vMax, -vMax, vMax, vMax);
-v3 = Vecteur.creationAleatoire(-vMax, -vMax, vMax, vMax);
-v4 = Vecteur.creationAleatoire(-vMax, -vMax, vMax, vMax);
+v0 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, vMax);
+v1 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, 0);
+v2 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, vMax);
+v3 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, vMax);
+v4 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, vMax);
 
 //--------------- ici commence la partie e changer ---------------------------------
 

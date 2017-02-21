@@ -3,7 +3,7 @@ package vues;
 import java.awt.*;
 import java.util.Vector;
 
-import exodecorateur_angryballs.maladroit.modele.Bille;
+import modele.Bille;
 
 
 import outilsvues.EcouteurTerminaison;

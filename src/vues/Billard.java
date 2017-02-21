@@ -4,7 +4,7 @@ import java.awt.Canvas;
 import java.awt.Graphics;
 import java.util.Vector;
 
-import exodecorateur_angryballs.maladroit.modele.Bille;
+import modele.Bille;
 
 
 /**
