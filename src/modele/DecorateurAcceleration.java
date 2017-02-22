@@ -2,14 +2,15 @@ package modele;
 
 import mesmaths.geometrie.base.Vecteur;
 
+import java.awt.*;
 import java.util.Vector;
 
 /**
  * Created by Zachizac on 21/02/2017.
  */
-public abstract class DecorateurAcceleration {
+public abstract class DecorateurAcceleration extends Bille{
 
-    private Bille bille;
+    protected Bille bille;
 
     /**
      * calcul (c-e-d mise e jour) eventuel  du vecteur acceleration.
