@@ -1,7 +1,10 @@
 package modele.Acceleration;
 
+import mesmaths.geometrie.base.Vecteur;
+import mesmaths.mecanique.MecaniquePoint;
 import modele.Bille;
 import modele.DecorateurAcceleration;
+import modele.OutilsBille;
 
 import java.util.Vector;
 
@@ -23,6 +26,8 @@ public class FrottementVisqueux extends DecorateurAcceleration{
      * @param billes l'ensemble des billes pour certains type d'acceleration
      */
     public void gestionAcceleration(Vector<Bille> billes){
-
+        this.getAcceleration().set(Vecteur.VECTEURNUL);
+        this.getAcceleration().ajoute(MecaniquePoint.freinageFrottement(this.masse(), this.getVitesse())); // contribution de l'acceleration due au frottement dans l'air
     }
+
 }

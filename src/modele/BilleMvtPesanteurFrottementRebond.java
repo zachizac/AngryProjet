@@ -24,26 +24,10 @@ Vecteur pesanteur;
 public BilleMvtPesanteurFrottementRebond(Vecteur position, double rayon,
         Vecteur vitesse, Vecteur pesanteur, Color couleur)
 {
-super(position, rayon, vitesse, couleur);
 this.pesanteur = pesanteur;
 }
 
 
-
-/* (non-Javadoc)
- * @see decorateur_angryballs.modele.Bille#gestionAcceleration(java.util.Vector)
- */
-@Override
-public void gestionAcceleration(Vector<Bille> billes)
-{
-super.gestionAcceleration(billes);          // remise e zero du vecteur acceleration
-this.getAcceleration().ajoute(this.pesanteur);          // contribution du champ de pesanteur (par exemple)
-this.getAcceleration().ajoute(MecaniquePoint.freinageFrottement(this.masse(), this.getVitesse())); // contribution de l'acceleration due au frottement dans l'air
-}
-
-
-
-@Override
 public void collisionContour(double abscisseCoinHautGauche,
         double ordonneeCoinHautGauche, double largeur, double hauteur)
 {

@@ -26,10 +26,9 @@ public class BilleMvtRUPasseMurailles extends Bille
     public BilleMvtRUPasseMurailles(Vecteur centre, double rayon,
             Vecteur vitesse, Color couleur)
     {
-    super(centre, rayon, vitesse, couleur);
     }
 
-@Override
+
 public void collisionContour(double abscisseCoinHautGauche,
         double ordonneeCoinHautGauche, double largeur, double hauteur)
 {

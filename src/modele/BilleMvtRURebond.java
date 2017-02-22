@@ -19,11 +19,9 @@ public class BilleMvtRURebond extends Bille
 public BilleMvtRURebond(Vecteur centre, double rayon, Vecteur vitesse,
         Color couleur)
 {
-super(centre, rayon, vitesse, couleur);
 
 }
 
-@Override
 public void collisionContour(double abscisseCoinHautGauche,
         double ordonneeCoinHautGauche, double largeur, double hauteur)
 {

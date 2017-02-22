@@ -1,5 +1,6 @@
 package modele.Acceleration;
 
+import mesmaths.geometrie.base.Vecteur;
 import modele.Bille;
 import modele.DecorateurAcceleration;
 
@@ -16,9 +17,9 @@ public class RectiligneUniforme extends DecorateurAcceleration {
 
     /**
      * Fonction gestionAcceleration differentes suivant le type d'acceleration
-     * @param billes l'ensemble des billes pour certains type d'acceleration
+     * @param billes l'ensemble des billes lorsque la bille subit l'attraction des autres billes
      */
     public void gestionAcceleration(Vector<Bille> billes){
-
+        this.getAcceleration().set(Vecteur.VECTEURNUL);
     }
 }
