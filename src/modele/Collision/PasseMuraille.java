@@ -2,12 +2,12 @@ package modele.Collision;
 
 import mesmaths.cinematique.Collisions;
 import modele.Bille;
-import modele.DecorateurCollision;
+import modele.Decorateur;
 
 /**
  * Created by Zachizac on 22/02/2017.
  */
-public class PasseMuraille extends DecorateurCollision{
+public class PasseMuraille extends Decorateur {
 
     /**
      * Constructeur de Rebond, une décoration de collision de bille
@@ -24,6 +24,7 @@ public class PasseMuraille extends DecorateurCollision{
      * @param largeur
      * @param hauteur
      */
+    @Override
     public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur)
     {
         Collisions.collisionBilleContourPasseMuraille( this.getPosition(), abscisseCoinHautGauche, ordonneeCoinHautGauche, largeur, hauteur);
