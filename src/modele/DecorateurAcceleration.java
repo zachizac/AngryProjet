@@ -1,8 +1,5 @@
 package modele;
 
-import mesmaths.geometrie.base.Vecteur;
-
-import java.awt.*;
 import java.util.Vector;
 
 /**

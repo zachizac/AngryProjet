@@ -3,14 +3,13 @@ import java.util.Vector;
 
 import mesmaths.geometrie.base.Vecteur;
 
+import modele.Acceleration.FrottementVisqueux;
+import modele.Acceleration.Pesanteur;
+import modele.Acceleration.RectiligneUniforme;
 import modele.Bille;
-import modele.BilleMvtNewtonArret;
-import modele.BilleMvtNewtonFrottementRebond;
-import modele.BilleMvtRUPasseMurailles;
-import modele.BilleMvtRURebond;
-import modele.BilleMvtPesanteurFrottementRebond;
+import modele.BilleNue;
+import modele.Collision.Rebond;
 import vues.CadreAngryBalls;
-import vues.VueBillard;
 
 /**
  * Gestion d'une liste de billes en mouvement ayant toutes un comportement different

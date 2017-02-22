@@ -4,7 +4,6 @@ import java.util.Vector;
 
 import mesmaths.geometrie.base.Vecteur;
 import modele.Bille;
-import modele.BilleMvtRUPasseMurailles;
 import vues.VueBillard;
 
 public class TestAnimationBilles

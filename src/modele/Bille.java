@@ -10,8 +10,6 @@ import mesmaths.geometrie.base.Vecteur;
 
 /**
  * Cas general d'une bille de billard
- * <p>
- * A MODIFIER
  */
 public abstract class Bille {
 //----------------- classe Bille-------------------------------------

@@ -5,6 +5,8 @@ package modele;
  */
 public abstract class DecorateurCollision extends Bille{
 
+    protected Bille bille;
+
     /**
      * gestion de l'eventuelle collision de la bille (this) avec le contour rectangulaire de l'ecran defini par (abscisseCoinHautGauche, ordonneeCoinHautGauche, largeur, hauteur)
      * <p>
