@@ -3,6 +3,7 @@ package modele;
 import mesmaths.geometrie.base.Vecteur;
 
 import java.awt.*;
+import java.util.Vector;
 
 /**
  * Created by Zachizac on 22/02/2017.
@@ -40,5 +41,8 @@ public class BilleNue extends Bille{
         this(position, rayon, vitesse, new Vecteur(), couleur);
     }
 
+    public void gestionAcceleration(Vector<Bille> billes){}
+
+    public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur){}
 
 }

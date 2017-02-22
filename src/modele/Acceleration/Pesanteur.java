@@ -18,9 +18,9 @@ public class Pesanteur extends DecorateurAcceleration{
      * Constructeur de pesanteur
      * @param b la bille supportant la pesanteur
      */
-    public Pesanteur(Bille b, Vecteur pesanteur) {
+    public Pesanteur(Bille b) {
         bille = b;
-        this.pesanteur = pesanteur;
+        this.pesanteur = bille.getAcceleration();
     }
 
     /**

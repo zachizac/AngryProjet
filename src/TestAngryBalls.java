@@ -3,11 +3,14 @@ import java.util.Vector;
 
 import mesmaths.geometrie.base.Vecteur;
 
+import modele.Acceleration.AttractionUniverselle;
 import modele.Acceleration.FrottementVisqueux;
 import modele.Acceleration.Pesanteur;
 import modele.Acceleration.RectiligneUniforme;
 import modele.Bille;
 import modele.BilleNue;
+import modele.Collision.Bloque;
+import modele.Collision.PasseMuraille;
 import modele.Collision.Rebond;
 import vues.CadreAngryBalls;
 
@@ -65,11 +68,11 @@ public class TestAngryBalls {
 
 //--------------- ici commence la partie e changer ---------------------------------
 
-        billes.add(new BilleMvtRURebond(p0, rayon, v0, Color.red));
-        billes.add(new BilleMvtPesanteurFrottementRebond(p1, rayon, v1, new Vecteur(0, 0.001), Color.yellow));
-        billes.add(new BilleMvtNewtonFrottementRebond(p2, rayon, v2, Color.green));
-        billes.add(new BilleMvtRUPasseMurailles(p3, rayon, v3, Color.cyan));
-        billes.add(new BilleMvtNewtonArret(p4, rayon, v4, Color.black));
+        billes.add(new RectiligneUniforme(new Rebond(new BilleNue(p0, rayon, v0, Color.red))));
+        billes.add(new Pesanteur(new FrottementVisqueux(new Rebond(new BilleNue(p1, rayon, v1, new Vecteur(0, 0.001), Color.yellow)))));
+        billes.add(new AttractionUniverselle(new FrottementVisqueux(new Rebond(new BilleNue(p2, rayon, v2, Color.green)))));
+        billes.add(new RectiligneUniforme(new PasseMuraille(new BilleNue(p3, rayon, v3, Color.cyan))));
+        billes.add(new AttractionUniverselle(new Bloque(new BilleNue(p4, rayon, v4, Color.black))));
 
 //---------------------- ici finit la partie e changer -------------------------------------------------------------
 

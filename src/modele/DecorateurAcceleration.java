@@ -18,6 +18,8 @@ public abstract class DecorateurAcceleration extends Bille{
      */
     public abstract void gestionAcceleration(Vector<Bille> billes);
 
+    public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur){}
+
 
 
 
