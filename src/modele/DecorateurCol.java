@@ -5,6 +5,7 @@ package modele;
  */
 public abstract class DecorateurCol extends Decorateur {
 
+    public DecorateurCol(Bille b){super(b);}
     public abstract void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur);
 
 }

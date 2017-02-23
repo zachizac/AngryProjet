@@ -31,7 +31,12 @@ public class Pesanteur extends DecorateurAccel {
     @Override
     public void gestionAcceleration(Vector<Bille> billes){
 //        super.gestionAcceleration(billes);                              // remise e zero du vecteur acceleration
-        this.getAcceleration().ajoute(this.pesanteur);                  // contribution du champ de pesanteur (par exemple)
+        bille.getAcceleration().ajoute(this.pesanteur);                  // contribution du champ de pesanteur (par exemple)
+    }
+
+    @Override
+    public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur) {
+
     }
 
 }

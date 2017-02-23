@@ -5,6 +5,8 @@ import modele.Bille;
 import modele.Decorateur;
 import modele.DecorateurCol;
 
+import java.util.Vector;
+
 /**
  * Created by Zachizac on 22/02/2017.
  */
@@ -15,8 +17,13 @@ public class Rebond extends DecorateurCol{
      * @param b la bille à décorer
      */
     public Rebond(Bille b) {
-//        super(b);
+        super(b);
         bille=b;
+    }
+
+    @Override
+    public void gestionAcceleration(Vector<Bille> billes) {
+        bille.gestionAcceleration(billes);
     }
 
     /**

@@ -22,4 +22,9 @@ public class RectiligneUniforme extends DecorateurAccel {
         this.getAcceleration().set(Vecteur.VECTEURNUL);
     }
 
+    @Override
+    public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur) {
+    bille.collisionContour(abscisseCoinHautGauche,ordonneeCoinHautGauche,largeur,hauteur);
+    }
+
 }

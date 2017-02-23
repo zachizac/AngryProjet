@@ -18,8 +18,13 @@ public class Bloque extends DecorateurCol{
      * @param b la bille à décorer
      */
     public Bloque(Bille b) {
-//        super(b);
+        super(b);
         bille = b;
+    }
+
+    @Override
+    public void gestionAcceleration(Vector<Bille> billes) {
+
     }
 
     /**
