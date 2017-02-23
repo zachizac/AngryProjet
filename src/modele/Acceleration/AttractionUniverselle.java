@@ -11,7 +11,7 @@ import java.util.Vector;
 /**
  * Created by Zachizac on 21/02/2017.
  */
-public class AttractionUniverselle extends DecorateurAccel {
+public class AttractionUniverselle extends Decorateur {
 
     /**
      * Constructeur d'attractionUniverselle
@@ -34,7 +34,7 @@ public class AttractionUniverselle extends DecorateurAccel {
 
     @Override
     public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur) {
-//        bille.collisionContour(abscisseCoinHautGauche,ordonneeCoinHautGauche,largeur,hauteur);
+        bille.collisionContour(abscisseCoinHautGauche,ordonneeCoinHautGauche,largeur,hauteur);
     }
 
 }

@@ -11,7 +11,7 @@ import java.util.Vector;
 /**
  * Created by Zachizac on 22/02/2017.
  */
-public class Bloque extends DecorateurCol{
+public class Bloque extends Decorateur{
 
     /**
      * Constructeur de Rebond, une décoration de collision de bille

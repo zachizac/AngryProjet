@@ -4,14 +4,13 @@ import mesmaths.geometrie.base.Vecteur;
 import mesmaths.mecanique.MecaniquePoint;
 import modele.Bille;
 import modele.Decorateur;
-import modele.DecorateurAccel;
 
 import java.util.Vector;
 
 /**
  * Created by Zachizac on 21/02/2017.
  */
-public class FrottementVisqueux extends DecorateurAccel {
+public class FrottementVisqueux extends Decorateur {
 
     /**
      * Constructeur de frottementVisqueux
@@ -19,7 +18,7 @@ public class FrottementVisqueux extends DecorateurAccel {
      */
     public FrottementVisqueux(Bille b) {
         super(b);
-        this.bille=b;
+        bille = b;
     }
 
     /**
@@ -29,12 +28,13 @@ public class FrottementVisqueux extends DecorateurAccel {
     @Override
     public void gestionAcceleration(Vector<Bille> billes){
 //        super.gestionAcceleration(billes);                                                                 // remise e zero du vecteur acceleration
-        this.getAcceleration().ajoute(MecaniquePoint.freinageFrottement(this.masse(), this.getVitesse())); // contribution de l'acceleration due au frottement dans l'air
+        bille.getAcceleration().ajoute(MecaniquePoint.freinageFrottement(bille.masse(), bille.getVitesse())); // contribution de l'acceleration due au frottement dans l'air
     }
 
     @Override
     public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur) {
-//        bille.collisionContour(abscisseCoinHautGauche,ordonneeCoinHautGauche,largeur,hauteur);
+        bille.collisionContour(abscisseCoinHautGauche,  ordonneeCoinHautGauche,largeur,  hauteur);
     }
+
 
 }

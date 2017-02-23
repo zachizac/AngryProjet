@@ -10,7 +10,7 @@ import java.util.Vector;
 /**
  * Created by Zachizac on 21/02/2017.
  */
-public class RectiligneUniforme extends DecorateurAccel {
+public class RectiligneUniforme extends Decorateur {
 
     public RectiligneUniforme(Bille b) {
         super(b);

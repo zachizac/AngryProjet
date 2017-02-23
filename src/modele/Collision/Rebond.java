@@ -10,7 +10,7 @@ import java.util.Vector;
 /**
  * Created by Zachizac on 22/02/2017.
  */
-public class Rebond extends DecorateurCol{
+public class Rebond extends Decorateur{
 
     /**
      * Constructeur de Rebond, une décoration de collision de bille

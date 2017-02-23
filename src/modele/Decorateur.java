@@ -16,6 +16,12 @@ public abstract class Decorateur extends Bille{
         super(b);
     }
 
+
+    public abstract void gestionAcceleration(Vector<Bille> billes);
+
+    public abstract void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur);
+
+
     /**
      * calcul (c-e-d mise e jour) eventuel  du vecteur acceleration.
      * billes est la liste de toutes les billes en mouvement

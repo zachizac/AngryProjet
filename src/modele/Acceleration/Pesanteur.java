@@ -10,7 +10,7 @@ import java.util.Vector;
 /**
  * Created by Zachizac on 21/02/2017.
  */
-public class Pesanteur extends DecorateurAccel {
+public class Pesanteur extends Decorateur{
 
     Vecteur pesanteur;
 
@@ -36,7 +36,7 @@ public class Pesanteur extends DecorateurAccel {
 
     @Override
     public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur) {
-
+        bille.collisionContour(abscisseCoinHautGauche,ordonneeCoinHautGauche,largeur,hauteur);
     }
 
 }
