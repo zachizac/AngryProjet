@@ -3,6 +3,8 @@ package vues;
 import java.awt.*;
 import java.util.Vector;
 
+import ObserverPattern.Observable;
+import ObserverPattern.Observer;
 import modele.Bille;
 
 
@@ -63,21 +65,15 @@ public double hauteurBillard()
 return this.billard.getHeight();
 }
 
-@Override
-public void miseAJour()
-{
-this.billard.repaint();
-}
+    @Override
+    public void miseAJour() {
+        this.billard.repaint();
+    }
 
-/* (non-Javadoc)
- * @see exodecorateur.vues.VueBillard#montrer()
- */
-@Override
-public void montrer()
-{
-this.setVisible(true);
-}
-
+    @Override
+    public void montrer() {
+        this.setVisible(true);
+    }
 
 
 }
