@@ -7,7 +7,7 @@ import modele.Decorateur;
 /**
  * Created by Zachizac on 22/02/2017.
  */
-public class Bloque extends Decorateur {
+public class Bloque extends Decorateur{
 
     /**
      * Constructeur de Rebond, une décoration de collision de bille
