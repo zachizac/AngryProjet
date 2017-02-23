@@ -3,6 +3,7 @@ package modele.Acceleration;
 import mesmaths.geometrie.base.Vecteur;
 import modele.Bille;
 import modele.Decorateur;
+import modele.DecorateurAccel;
 import modele.OutilsBille;
 
 import java.util.Vector;
@@ -10,7 +11,7 @@ import java.util.Vector;
 /**
  * Created by Zachizac on 21/02/2017.
  */
-public class AttractionUniverselle extends Decorateur {
+public class AttractionUniverselle extends DecorateurAccel {
 
     /**
      * Constructeur d'attractionUniverselle
@@ -27,7 +28,7 @@ public class AttractionUniverselle extends Decorateur {
      */
     @Override
     public void gestionAcceleration(Vector<Bille> billes){
-        super.gestionAcceleration(billes);                                                                      // remise e zero du vecteur acceleration
+//        super.gestionAcceleration(billes);                                                                      // remise e zero du vecteur acceleration
         this.getAcceleration().ajoute(OutilsBille.gestionAccelerationNewton(this, billes));            // contribution de l'acceleration due e l'attraction des autres billes
     }
 

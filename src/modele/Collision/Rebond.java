@@ -3,18 +3,19 @@ package modele.Collision;
 import mesmaths.cinematique.Collisions;
 import modele.Bille;
 import modele.Decorateur;
+import modele.DecorateurCol;
 
 /**
  * Created by Zachizac on 22/02/2017.
  */
-public class Rebond extends Decorateur{
+public class Rebond extends DecorateurCol{
 
     /**
      * Constructeur de Rebond, une décoration de collision de bille
      * @param b la bille à décorer
      */
     public Rebond(Bille b) {
-        super(b);
+//        super(b);
         bille=b;
     }
 

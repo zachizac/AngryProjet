@@ -92,11 +92,6 @@ public abstract class Bille {
 
     /**
      * mise e jour de position et vitesse e t+deltaT e partir de position et vitesse e l'instant t
-     * <p>
-     * modifie le vecteur position et le vecteur vitesse
-     * <p>
-     * laisse le vecteur acceleration intact
-     * <p>
      * La bille subit par defaut un mouvement uniformement accelere
      */
     public void deplacer(double deltaT) {
@@ -105,11 +100,6 @@ public abstract class Bille {
 
     /**
      * gestion de l'eventuelle  collision de cette bille avec les autres billes
-     * <p>
-     * billes est la liste de toutes les billes en mouvement
-     * <p>
-     * Le comportement par defaut est le choc parfaitement elastique (c-e-d rebond sans amortissement)
-     *
      * @return true si il y a collision et dans ce cas les positions et vecteurs vitesses des 2 billes impliquees dans le choc sont modifiees
      * si renvoie false, il n'y a pas de collision et les billes sont laissees intactes
      */
@@ -117,9 +107,9 @@ public abstract class Bille {
         return OutilsBille.gestionCollisionBilleBille(this, billes);
     }
 
-    public abstract void gestionAcceleration(Vector<Bille> billes);
-
-    public abstract void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur);
+//    public abstract void gestionAcceleration(Vector<Bille> billes);
+//
+//    public abstract void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur);
 
 
     public void dessine(Graphics g) {

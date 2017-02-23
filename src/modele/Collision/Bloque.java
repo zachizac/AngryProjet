@@ -1,20 +1,24 @@
 package modele.Collision;
 
 import mesmaths.cinematique.Collisions;
+import mesmaths.geometrie.base.Vecteur;
 import modele.Bille;
 import modele.Decorateur;
+import modele.DecorateurCol;
+
+import java.util.Vector;
 
 /**
  * Created by Zachizac on 22/02/2017.
  */
-public class Bloque extends Decorateur{
+public class Bloque extends DecorateurCol{
 
     /**
      * Constructeur de Rebond, une décoration de collision de bille
      * @param b la bille à décorer
      */
     public Bloque(Bille b) {
-        super(b);
+//        super(b);
         bille = b;
     }
 
