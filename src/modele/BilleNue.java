@@ -21,12 +21,7 @@ public class BilleNue extends Bille{
      */
     public BilleNue(Vecteur position, double rayon, Vecteur vitesse,
                     Vecteur acceleration, Color couleur) {
-        this.position = position;
-        this.rayon = rayon;
-        this.vitesse = vitesse;
-        this.acceleration = acceleration;
-        this.couleur = couleur;
-        this.clef = Bille.prochaineClef++;
+    super(position,rayon,vitesse,acceleration,couleur);
     }
 
     /**

@@ -12,7 +12,8 @@ import java.util.Vector;
 public class RectiligneUniforme extends Decorateur {
 
     public RectiligneUniforme(Bille b) {
-        bille = b;
+//        this.bille=b;
+        super(b);
     }
 
 }

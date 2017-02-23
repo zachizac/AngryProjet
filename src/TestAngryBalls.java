@@ -69,6 +69,8 @@ public class TestAngryBalls {
 //--------------- ici commence la partie e changer ---------------------------------
 
         billes.add(new RectiligneUniforme(new Rebond(new BilleNue(p0, rayon, v0, Color.red))));
+//        Bille b=new BilleNue(p0, rayon, v0, Color.red);
+//        b= new Rebond(b);
         billes.add(new Pesanteur(new FrottementVisqueux(new Rebond(new BilleNue(p1, rayon, v1, new Vecteur(0, 0.001), Color.yellow)))));
         billes.add(new AttractionUniverselle(new FrottementVisqueux(new Rebond(new BilleNue(p2, rayon, v2, Color.green)))));
         billes.add(new RectiligneUniforme(new PasseMuraille(new BilleNue(p3, rayon, v3, Color.cyan))));

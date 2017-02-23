@@ -14,6 +14,7 @@ public class PasseMuraille extends Decorateur {
      * @param b la bille à décorer
      */
     public PasseMuraille(Bille b) {
+        super(b);
         bille = b;
     }
 

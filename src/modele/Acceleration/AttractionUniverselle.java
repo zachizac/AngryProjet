@@ -17,6 +17,7 @@ public class AttractionUniverselle extends Decorateur {
      * @param b la bille subissant l'attraction
      */
     public AttractionUniverselle(Bille b) {
+        super(b);
         bille = b;
     }
 

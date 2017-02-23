@@ -18,6 +18,7 @@ public class Pesanteur extends Decorateur {
      * @param b la bille supportant la pesanteur
      */
     public Pesanteur(Bille b) {
+        super(b);
         bille = b;
         this.pesanteur = bille.getAcceleration();
     }

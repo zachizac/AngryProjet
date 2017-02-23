@@ -11,6 +11,10 @@ public abstract class Decorateur extends Bille{
 
     protected Bille bille;
 
+    public Decorateur(Bille b){
+        super(b);
+    }
+
     /**
      * calcul (c-e-d mise e jour) eventuel  du vecteur acceleration.
      * billes est la liste de toutes les billes en mouvement
@@ -18,6 +22,7 @@ public abstract class Decorateur extends Bille{
      * La nature du calcul du vecteur acceleration de la bille  est definie dans les classes derivees
      * A ce niveau le vecteur acceleration est mis e zero (c'est e dire pas d'acceleration)
      */
+
     public void gestionAcceleration(Vector<Bille> billes){
         this.getAcceleration().set(Vecteur.VECTEURNUL);
     }
@@ -32,8 +37,4 @@ public abstract class Decorateur extends Bille{
     public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur){
 
     }
-
-
-
-
 }

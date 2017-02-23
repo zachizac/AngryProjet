@@ -14,6 +14,7 @@ public class Bloque extends Decorateur {
      * @param b la bille à décorer
      */
     public Bloque(Bille b) {
+        super(b);
         bille = b;
     }
 

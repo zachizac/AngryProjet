@@ -14,7 +14,8 @@ public class Rebond extends Decorateur{
      * @param b la bille à décorer
      */
     public Rebond(Bille b) {
-        bille = b;
+        super(b);
+        bille=b;
     }
 
     /**

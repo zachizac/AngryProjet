@@ -26,7 +26,25 @@ public abstract class Bille {
 
     public static double ro = 1;        // masse volumique
 
+    public Bille(){};
 
+    public Bille(Bille b){
+        this.position=b.position;
+        this.rayon=b.rayon;
+        this.vitesse=b.vitesse;
+        this.acceleration=b.acceleration;
+        this.couleur=b.couleur;
+        this.clef=b.clef;
+    }
+    public Bille(Vecteur position, double rayon, Vecteur vitesse,
+                 Vecteur acceleration, Color couleur){
+        this.position = position;
+        this.rayon = rayon;
+        this.vitesse = vitesse;
+        this.acceleration = acceleration;
+        this.couleur = couleur;
+        this.clef = Bille.prochaineClef++;
+    }
     /**
      * @return the position
      */

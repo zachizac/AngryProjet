@@ -17,7 +17,8 @@ public class FrottementVisqueux extends Decorateur {
      * @param b la bille subissant ce frottement
      */
     public FrottementVisqueux(Bille b) {
-        bille = b;
+        super(b);
+        this.bille=b;
     }
 
     /**
