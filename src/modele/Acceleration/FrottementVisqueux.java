@@ -27,7 +27,7 @@ public class FrottementVisqueux extends Decorateur {
      */
     @Override
     public void gestionAcceleration(Vector<Bille> billes){
-//        super.gestionAcceleration(billes);                                                                 // remise e zero du vecteur acceleration
+        super.gestionAcceleration(billes);                                                                 // remise e zero du vecteur acceleration
         bille.getAcceleration().ajoute(MecaniquePoint.freinageFrottement(bille.masse(), bille.getVitesse())); // contribution de l'acceleration due au frottement dans l'air
     }
 

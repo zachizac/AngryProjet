@@ -30,7 +30,7 @@ public class Pesanteur extends Decorateur{
      */
     @Override
     public void gestionAcceleration(Vector<Bille> billes){
-//        super.gestionAcceleration(billes);                              // remise e zero du vecteur acceleration
+        super.gestionAcceleration(billes);                              // remise e zero du vecteur acceleration
         bille.getAcceleration().ajoute(this.pesanteur);                  // contribution du champ de pesanteur (par exemple)
     }
 

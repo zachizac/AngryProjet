@@ -17,7 +17,9 @@ public abstract class Decorateur extends Bille{
     }
 
 
-    public abstract void gestionAcceleration(Vector<Bille> billes);
+    public void gestionAcceleration(Vector<Bille> billes){
+        super.gestionAcceleration(billes);
+    };
 
     public abstract void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur);
 

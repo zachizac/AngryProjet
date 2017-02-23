@@ -107,7 +107,9 @@ public abstract class Bille {
         return OutilsBille.gestionCollisionBilleBille(this, billes);
     }
 
-   public abstract void gestionAcceleration(Vector<Bille> billes);
+   public void gestionAcceleration(Vector<Bille> billes){
+        this.getAcceleration().set(Vecteur.VECTEURNUL);
+    };
 
     public abstract void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur);
 

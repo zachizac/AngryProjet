@@ -28,7 +28,7 @@ public class AttractionUniverselle extends Decorateur {
      */
     @Override
     public void gestionAcceleration(Vector<Bille> billes){
-//        super.gestionAcceleration(billes);                                                                      // remise e zero du vecteur acceleration
+        super.gestionAcceleration(billes);                                                                      // remise e zero du vecteur acceleration
         this.getAcceleration().ajoute(OutilsBille.gestionAccelerationNewton(this, billes));            // contribution de l'acceleration due e l'attraction des autres billes
     }
 
