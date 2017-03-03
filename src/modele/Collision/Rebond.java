@@ -3,6 +3,9 @@ package modele.Collision;
 import mesmaths.cinematique.Collisions;
 import modele.Bille;
 import modele.Decorateur;
+import modele.DecorateurCol;
+
+import java.util.Vector;
 
 /**
  * Created by Zachizac on 22/02/2017.
@@ -14,7 +17,13 @@ public class Rebond extends Decorateur{
      * @param b la bille à décorer
      */
     public Rebond(Bille b) {
-        bille = b;
+        super(b);
+        bille=b;
+    }
+
+    @Override
+    public void gestionAcceleration(Vector<Bille> billes) {
+        bille.gestionAcceleration(billes);
     }
 
     /**

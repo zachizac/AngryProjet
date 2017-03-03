@@ -17,6 +17,7 @@ public class FrottementVisqueux extends Decorateur {
      * @param b la bille subissant ce frottement
      */
     public FrottementVisqueux(Bille b) {
+        super(b);
         bille = b;
     }
 
@@ -27,7 +28,13 @@ public class FrottementVisqueux extends Decorateur {
     @Override
     public void gestionAcceleration(Vector<Bille> billes){
         super.gestionAcceleration(billes);                                                                 // remise e zero du vecteur acceleration
-        this.getAcceleration().ajoute(MecaniquePoint.freinageFrottement(this.masse(), this.getVitesse())); // contribution de l'acceleration due au frottement dans l'air
+        bille.getAcceleration().ajoute(MecaniquePoint.freinageFrottement(bille.masse(), bille.getVitesse())); // contribution de l'acceleration due au frottement dans l'air
     }
+
+    @Override
+    public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur) {
+        bille.collisionContour(abscisseCoinHautGauche,  ordonneeCoinHautGauche,largeur,  hauteur);
+    }
+
 
 }

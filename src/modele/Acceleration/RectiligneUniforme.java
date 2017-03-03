@@ -3,6 +3,7 @@ package modele.Acceleration;
 import mesmaths.geometrie.base.Vecteur;
 import modele.Bille;
 import modele.Decorateur;
+import modele.DecorateurAccel;
 
 import java.util.Vector;
 
@@ -12,7 +13,18 @@ import java.util.Vector;
 public class RectiligneUniforme extends Decorateur {
 
     public RectiligneUniforme(Bille b) {
-        bille = b;
+        super(b);
+        bille=b;
+    }
+
+    @Override
+    public void gestionAcceleration(Vector<Bille> billes) {
+        this.getAcceleration().set(Vecteur.VECTEURNUL);
+    }
+
+    @Override
+    public void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur) {
+    bille.collisionContour(abscisseCoinHautGauche,ordonneeCoinHautGauche,largeur,hauteur);
     }
 
 }

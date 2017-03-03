@@ -3,8 +3,8 @@ import java.awt.event.ActionListener;
 
 
 /**
- *  ICI : IL N'Y A RIEN A CHANGER 
- *  
+ *  ICI : IL N'Y A RIEN A CHANGER
+ *
  *  */
 
 public class EcouteurBoutonArreter implements ActionListener

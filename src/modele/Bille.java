@@ -26,7 +26,25 @@ public abstract class Bille {
 
     public static double ro = 1;        // masse volumique
 
+    public Bille(){};
 
+    public Bille(Bille b){
+        this.position=b.position;
+        this.rayon=b.rayon;
+        this.vitesse=b.vitesse;
+        this.acceleration=b.acceleration;
+        this.couleur=b.couleur;
+        this.clef=b.clef;
+    }
+    public Bille(Vecteur position, double rayon, Vecteur vitesse,
+                 Vecteur acceleration, Color couleur){
+        this.position = position;
+        this.rayon = rayon;
+        this.vitesse = vitesse;
+        this.acceleration = acceleration;
+        this.couleur = couleur;
+        this.clef = Bille.prochaineClef++;
+    }
     /**
      * @return the position
      */
@@ -74,11 +92,6 @@ public abstract class Bille {
 
     /**
      * mise e jour de position et vitesse e t+deltaT e partir de position et vitesse e l'instant t
-     * <p>
-     * modifie le vecteur position et le vecteur vitesse
-     * <p>
-     * laisse le vecteur acceleration intact
-     * <p>
      * La bille subit par defaut un mouvement uniformement accelere
      */
     public void deplacer(double deltaT) {
@@ -87,11 +100,6 @@ public abstract class Bille {
 
     /**
      * gestion de l'eventuelle  collision de cette bille avec les autres billes
-     * <p>
-     * billes est la liste de toutes les billes en mouvement
-     * <p>
-     * Le comportement par defaut est le choc parfaitement elastique (c-e-d rebond sans amortissement)
-     *
      * @return true si il y a collision et dans ce cas les positions et vecteurs vitesses des 2 billes impliquees dans le choc sont modifiees
      * si renvoie false, il n'y a pas de collision et les billes sont laissees intactes
      */
@@ -99,7 +107,9 @@ public abstract class Bille {
         return OutilsBille.gestionCollisionBilleBille(this, billes);
     }
 
-    public abstract void gestionAcceleration(Vector<Bille> billes);
+   public void gestionAcceleration(Vector<Bille> billes){
+        this.getAcceleration().set(Vecteur.VECTEURNUL);
+    };
 
     public abstract void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur);
 
