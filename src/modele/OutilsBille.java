@@ -99,7 +99,7 @@ public class OutilsBille {
             C[i] = billeCourante.getPosition();
         }
 
-//------------------ e present on calcule le champ de gravite exerce par les autres billes sur cette bille ------------------
+//------------------ e present on calcule le champ de gravite exerce par les autres billes sur cette bille -----------------
 
         return MecaniquePoint.champGravitéGlobal(cetteBille.getPosition(), masses, C);
     }
