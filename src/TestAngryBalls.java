@@ -84,7 +84,7 @@ public class TestAngryBalls {
 
         Bille b3=new BilleNue(p1, rayon, v1, new Vecteur(0, 0.001), Color.yellow);
         b3=new Rebond(b3);
-        b3=new  FrottementVisqueux(b3);
+        b3=new FrottementVisqueux(b3);
 //        b3= new Pesanteur(b3);
         billes.add(b3);
 //        billes.add(new Pesanteur(new FrottementVisqueux(new Rebond(new BilleNue(p1, rayon, v1, new Vecteur(0, 0.001), Color.yellow)))));
