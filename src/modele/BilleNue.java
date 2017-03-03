@@ -16,7 +16,6 @@ public class BilleNue extends Bille{
      * @param position
      * @param rayon
      * @param vitesse
-     * @param acceleration
      * @param couleur
      */
     public BilleNue(Vecteur position, double rayon, Vecteur vitesse,

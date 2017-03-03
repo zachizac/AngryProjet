@@ -68,26 +68,8 @@ public class TestAngryBalls {
 
 //--------------- ici commence la partie e changer ---------------------------------
 
-//        billes.add(new RectiligneUniforme(new Rebond(new BilleNue(p0, rayon, v0, Color.red))));
-        Bille b=new BilleNue(p0, rayon, v0, Color.red);
-        b= new Rebond(b);
-        b=new RectiligneUniforme(b);
-        billes.add(b);
-
-//        Bille b2=new BilleNue(p1, rayon, v1, new Vecteur(0, 0.001), Color.yellow);
-//        b2= new PasseMuraille(b2);
-//        b2=new RectiligneUniforme(b2);
-//        billes.add(b2);
-
-//        b=new RectiligneUniforme(new PasseMuraille(new BilleNue(p1, rayon, v1, new Vecteur(0, 0.001), Color.yellow)));
-//        billes.add(b);
-
-        Bille b3=new BilleNue(p1, rayon, v1, new Vecteur(0, 0.001), Color.yellow);
-        b3=new Rebond(b3);
-        b3=new FrottementVisqueux(b3);
-//        b3= new Pesanteur(b3);
-        billes.add(b3);
-//        billes.add(new Pesanteur(new FrottementVisqueux(new Rebond(new BilleNue(p1, rayon, v1, new Vecteur(0, 0.001), Color.yellow)))));
+        billes.add(new RectiligneUniforme(new Rebond(new BilleNue(p0, rayon, v0, Color.red))));
+        billes.add(new Pesanteur(new FrottementVisqueux(new Rebond(new BilleNue(p1, rayon, v1, Color.yellow))), new Vecteur(0,0.001)));
         billes.add(new AttractionUniverselle(new FrottementVisqueux(new Rebond(new BilleNue(p2, rayon, v2, Color.green)))));
         billes.add(new RectiligneUniforme(new PasseMuraille(new BilleNue(p3, rayon, v3, Color.cyan))));
         billes.add(new AttractionUniverselle(new Bloque(new BilleNue(p4, rayon, v4, Color.black))));

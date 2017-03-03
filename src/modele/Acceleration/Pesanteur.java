@@ -11,16 +11,15 @@ import java.util.Vector;
  */
 public class Pesanteur extends Decorateur{
 
-    Vecteur pesanteur;
-
+    private Vecteur pesanteur;
     /**
      * Constructeur de pesanteur
      * @param b la bille supportant la pesanteur
      */
-    public Pesanteur(Bille b) {
+    public Pesanteur(Bille b, Vecteur p) {
         super(b);
+        pesanteur = p;
         bille = b;
-        this.pesanteur = bille.getAcceleration();
     }
 
     /**
@@ -30,7 +29,7 @@ public class Pesanteur extends Decorateur{
     @Override
     public void gestionAcceleration(Vector<Bille> billes){
         super.gestionAcceleration(billes);                              // remise e zero du vecteur acceleration
-        bille.getAcceleration().ajoute(this.pesanteur);                  // contribution du champ de pesanteur (par exemple)
+        bille.getAcceleration().ajoute(pesanteur);                  // contribution du champ de pesanteur (par exemple)
     }
 
     @Override

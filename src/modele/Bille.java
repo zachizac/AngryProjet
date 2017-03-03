@@ -26,6 +26,8 @@ public abstract class Bille {
 
     public static double ro = 1;        // masse volumique
 
+    protected Vecteur pesanteur;
+
     public Bille(){};
 
     public Bille(Bille b){
@@ -76,6 +78,21 @@ public abstract class Bille {
         return this.acceleration;
     }
 
+    /**
+     *
+     * @param p le vecteur pesanteur
+     */
+    public void setPesanteur(Vecteur p){
+        this.pesanteur = p;
+    }
+
+    /**
+     *
+     * @return pesanteur
+     */
+    public Vecteur getPesanteur(){
+        return this.pesanteur;
+    }
 
     /**
      * @return the clef
@@ -131,7 +148,7 @@ public abstract class Bille {
 
 
     public String toString() {
-        return "centre = " + position + " rayon = " + rayon + " vitesse = " + vitesse + " acceleration = " + acceleration + " couleur = " + couleur + "clef = " + clef;
+        return "centre = " + position + " rayon = " + rayon + " vitesse = " + vitesse + " acceleration = " + acceleration + " couleur = " + couleur + "clef = " + clef + "pesanteur = " + pesanteur;
     }
 
 //----------------- classe Bille -------------------------------------
