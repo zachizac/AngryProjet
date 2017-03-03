@@ -3,7 +3,6 @@ package modele.Collision;
 import mesmaths.cinematique.Collisions;
 import modele.Bille;
 import modele.Decorateur;
-import modele.DecorateurCol;
 
 import java.util.Vector;
 

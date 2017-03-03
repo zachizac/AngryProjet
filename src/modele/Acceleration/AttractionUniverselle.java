@@ -1,9 +1,7 @@
 package modele.Acceleration;
 
-import mesmaths.geometrie.base.Vecteur;
 import modele.Bille;
 import modele.Decorateur;
-import modele.DecorateurAccel;
 import modele.OutilsBille;
 
 import java.util.Vector;
