@@ -11,8 +11,18 @@ public class DessineVisitor implements IVisitor {
 
     Graphics g;
 
+    /**
+     * constructeur du visitor qui prend un parametre pour l'affichage
+     * @param graphics
+     */
     public DessineVisitor(Graphics graphics){ this.g = graphics; }
 
+    /**
+     * Anciennement methode dessine presente dans la classe bille et qui affiche les billes sur le billard
+     * remplacer par un visiteur et donc cette methode visite maintenant la classe bille pour l'affichage
+     * independance de la vue et du modele ainsi mieux respectee
+     * @param b la bille a afficher
+     */
     public void visit(Bille b) {
         int width, height;
         int xMin, yMin;
