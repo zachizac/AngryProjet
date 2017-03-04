@@ -47,15 +47,17 @@ Frame f;
     {
         int i;
 
-        while (true) {
-            Graphics myGraphics = f.getGraphics();
-            DessineVisitor visitor = new DessineVisitor(myGraphics);
+        //while (true) {
+        Graphics g = this.getGraphics();
+        DessineVisitor visitor = new DessineVisitor(g);
 
-            for ( i = 0; i < this.billes.size(); ++i)
-                this.billes.get(i).accept(visitor);
-
-            myGraphics.dispose();
+        for ( i = 0; i < this.billes.size(); ++i) {
+            this.billes.get(i).accept(visitor);
         }
+
+        g.dispose();
+
+        //}
     }
 
     

@@ -69,15 +69,15 @@ return this.billard.getHeight();
 }
 
     @Override
-    public void miseAJour() {
+    /*public void miseAJour() {
         this.billard.repaint();
-    }
+    }*/
     /**
      * methode miseAJour redefinie pour l'affichage actif
      */
-    /*public void miseAJour() {
+    public void miseAJour() {
         this.billard.myRenderingLoop();
-    }*/
+    }
 
     @Override
     public void montrer() {
