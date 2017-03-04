@@ -4,6 +4,7 @@ import java.awt.Canvas;
 import java.awt.Graphics;
 import java.util.Vector;
 
+import VisitorsPattern.DessineVisitor;
 import modele.Bille;
 
 
@@ -28,9 +29,11 @@ this.billes = billes;
     public void paint(Graphics graphics)
     {
     int i;
+    DessineVisitor visitor = new DessineVisitor(graphics);
     
     for ( i = 0; i < this.billes.size(); ++i)
-        this.billes.get(i).dessine(graphics);
+        this.billes.get(i).accept(visitor);
+        //this.billes.get(i).dessine(graphics);
     
     //System.out.println("billes dans le billard = " + billes);
     }

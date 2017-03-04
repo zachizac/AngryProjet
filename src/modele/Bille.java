@@ -3,6 +3,8 @@ package modele;
 import java.awt.*;
 import java.util.Vector;
 
+import VisitorsPattern.IVisitable;
+import VisitorsPattern.IVisitor;
 import mesmaths.cinematique.Cinematique;
 import mesmaths.geometrie.base.Geop;
 import mesmaths.geometrie.base.Vecteur;
@@ -11,7 +13,7 @@ import mesmaths.geometrie.base.Vecteur;
 /**
  * Cas general d'une bille de billard
  */
-public abstract class Bille {
+public abstract class Bille implements IVisitable {
 //----------------- classe Bille-------------------------------------
 
     protected Vecteur position;   // centre de la bille
@@ -25,8 +27,6 @@ public abstract class Bille {
     public static int prochaineClef = 0;
 
     public static double ro = 1;        // masse volumique
-
-    protected Vecteur pesanteur;
 
     public Bille(){};
 
@@ -80,19 +80,12 @@ public abstract class Bille {
 
     /**
      *
-     * @param p le vecteur pesanteur
+     * @return the couleur
      */
-    public void setPesanteur(Vecteur p){
-        this.pesanteur = p;
+    public Color getCouleur(){
+        return this.couleur;
     }
 
-    /**
-     *
-     * @return pesanteur
-     */
-    public Vecteur getPesanteur(){
-        return this.pesanteur;
-    }
 
     /**
      * @return the clef
@@ -130,25 +123,18 @@ public abstract class Bille {
 
     public abstract void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur);
 
-
-    public void dessine(Graphics g) {
-        int width, height;
-        int xMin, yMin;
-
-        xMin = (int) Math.round(position.x - rayon);
-        yMin = (int) Math.round(position.y - rayon);
-
-        width = height = 2 * (int) Math.round(rayon);
-
-        g.setColor(couleur);
-        g.fillOval(xMin, yMin, width, height);
-        g.setColor(Color.CYAN);
-        g.drawOval(xMin, yMin, width, height);
+    /**
+     * methode accept pour implementer le dp visitor
+     * @param visitor le visiteur
+     */
+    public void accept(IVisitor visitor)
+    {
+        visitor.visit(this);
     }
 
 
     public String toString() {
-        return "centre = " + position + " rayon = " + rayon + " vitesse = " + vitesse + " acceleration = " + acceleration + " couleur = " + couleur + "clef = " + clef + "pesanteur = " + pesanteur;
+        return "centre = " + position + " rayon = " + rayon + " vitesse = " + vitesse + " acceleration = " + acceleration + " couleur = " + couleur + "clef = " + clef;
     }
 
 //----------------- classe Bille -------------------------------------
