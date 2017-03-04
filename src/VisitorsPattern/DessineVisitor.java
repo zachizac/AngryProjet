@@ -16,6 +16,9 @@ public class DessineVisitor implements IVisitor {
      * @param graphics
      */
     public DessineVisitor(Graphics graphics){ this.g = graphics; }
+    public DessineVisitor(){};
+
+    public void setGraphics(Graphics g){ this.g=g;}
 
     /**
      * Anciennement methode dessine presente dans la classe bille et qui affiche les billes sur le billard
@@ -32,9 +35,19 @@ public class DessineVisitor implements IVisitor {
 
         width = height = 2 * (int) Math.round(b.getRayon());
 
+        g.setColor(Color.WHITE);
+//        g.fillOval(xMin, yMin, width+100, height+100);
+
         g.setColor(b.getCouleur());
+//        g.clearRect(xMin, yMin, width+100, height+100);
+
         g.fillOval(xMin, yMin, width, height);
+
+        g.setPaintMode();
+
         g.setColor(Color.CYAN);
         g.drawOval(xMin, yMin, width, height);
+
+//        g.dispose();
     }
 }
