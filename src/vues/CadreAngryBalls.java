@@ -28,12 +28,15 @@ Panel haut, centre, bas;
 
 EcouteurTerminaison ecouteurTerminaison;
 
+
 public CadreAngryBalls(String titre, String message, Vector<Bille> billes) throws HeadlessException
 {
 super(titre);
 Outils.place(this, 0.33, 0.33, 0.5, 0.5);
 this.ecouteurTerminaison = new EcouteurTerminaison(this);
 
+//ligne pour que la frame ne fasse pas les repaints non souhaité
+this.setIgnoreRepaint(true);
 
 this.haut = new Panel(); this.haut.setBackground(Color.LIGHT_GRAY);
 this.add(this.haut,BorderLayout.NORTH);
@@ -47,7 +50,7 @@ this.add(this.bas,BorderLayout.SOUTH);
 this.presentation = new TextField(message, 100); this.presentation.setEditable(false);
 this.haut.add(this.presentation);
 
-this.billard = new Billard(billes);
+this.billard = new Billard(billes, this);
 this.add(this.billard);
 
 this.lancerBilles = new Button("lancer les billes"); this.bas.add(this.lancerBilles);
@@ -69,6 +72,12 @@ return this.billard.getHeight();
     public void miseAJour() {
         this.billard.repaint();
     }
+    /**
+     * methode miseAJour redefinie pour l'affichage actif
+     */
+    /*public void miseAJour() {
+        this.billard.myRenderingLoop();
+    }*/
 
     @Override
     public void montrer() {

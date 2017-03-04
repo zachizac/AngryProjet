@@ -1,7 +1,7 @@
 package vues;
 
-import java.awt.Canvas;
-import java.awt.Graphics;
+import java.awt.*;
+import java.awt.image.BufferStrategy;
 import java.util.Vector;
 
 import VisitorsPattern.DessineVisitor;
@@ -18,10 +18,14 @@ import modele.Bille;
 public class Billard extends Canvas
 {
 Vector<Bille> billes;
-    public Billard(Vector<Bille> billes)
+Frame f;
+
+    public Billard(Vector<Bille> billes, Frame f)
     {
-this.billes = billes;
+        this.billes = billes;
+        this.f = f;
     }
+
     /* (non-Javadoc)
      * @see java.awt.Canvas#paint(java.awt.Graphics)
      */
@@ -29,6 +33,7 @@ this.billes = billes;
     public void paint(Graphics graphics)
     {
     int i;
+
     DessineVisitor visitor = new DessineVisitor(graphics);
     
     for ( i = 0; i < this.billes.size(); ++i)
@@ -36,6 +41,21 @@ this.billes = billes;
         //this.billes.get(i).dessine(graphics);
     
     //System.out.println("billes dans le billard = " + billes);
+    }
+
+    public void myRenderingLoop()
+    {
+        int i;
+
+        while (true) {
+            Graphics myGraphics = f.getGraphics();
+            DessineVisitor visitor = new DessineVisitor(myGraphics);
+
+            for ( i = 0; i < this.billes.size(); ++i)
+                this.billes.get(i).accept(visitor);
+
+            myGraphics.dispose();
+        }
     }
 
     
