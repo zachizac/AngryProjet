@@ -23,8 +23,6 @@ public class DessineVisitor implements IVisitor {
     public DessineVisitor() {
     }
 
-    ;
-
     public void setGraphics(Graphics g) {
         this.g = g;
     }
@@ -45,12 +43,10 @@ public class DessineVisitor implements IVisitor {
 
         width = height = 2 * (int) Math.round(b.getRayon());
 
-
         g.setColor(b.getCouleur());
         g.fillOval(xMin, yMin, width, height);
         g.setPaintMode();
         g.setColor(Color.CYAN);
         g.drawOval(xMin, yMin, width, height);
-
     }
 }

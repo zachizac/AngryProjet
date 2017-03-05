@@ -40,8 +40,6 @@ public class Billard extends Canvas {
     }
 
     public void myRenderingLoop() {
-        int i;
-
         Graphics g = this.getGraphics();
         visitor.setGraphics(g);
 

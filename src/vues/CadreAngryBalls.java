@@ -23,7 +23,8 @@ public class CadreAngryBalls extends Frame implements VueBillard
 {
 TextField presentation;
 Billard billard;
-public Button lancerBilles, arreterBilles;
+//public Button lancerBilles, arreterBilles;
+    public ViewButton lancerBilles,arreterBilles;
 Panel haut, centre, bas;
 
 EcouteurTerminaison ecouteurTerminaison;
@@ -31,6 +32,7 @@ EcouteurTerminaison ecouteurTerminaison;
 
 public CadreAngryBalls(String titre, String message, Vector<Bille> billes) throws HeadlessException
 {
+
 super(titre);
 Outils.place(this, 0.33, 0.33, 0.5, 0.5);
 this.ecouteurTerminaison = new EcouteurTerminaison(this);
@@ -53,8 +55,13 @@ this.haut.add(this.presentation);
 this.billard = new Billard(billes, this);
 this.add(this.billard);
 
-this.lancerBilles = new Button("lancer les billes"); this.bas.add(this.lancerBilles);
-this.arreterBilles = new Button("arreter les billes"); this.bas.add(this.arreterBilles);
+this.lancerBilles = new ViewButton(new Button("lancer les billes"));
+//this.lancerBilles.bouton = new Button("lancer les billes");
+    this.bas.add(this.lancerBilles.bouton);
+
+    this.arreterBilles=new ViewButton(new Button("arreter les billes"));
+//this.arreterBilles.bouton = new Button("arreter les billes");
+    this.bas.add(this.arreterBilles.bouton);
 
 }
 
@@ -69,9 +76,8 @@ return this.billard.getHeight();
 }
 
     @Override
-    /*public void miseAJour() {
-        this.billard.repaint();
-    }*/
+//    public void miseAJour() {        this.billard.repaint();
+//    }
     /**
      * methode miseAJour redefinie pour l'affichage actif
      */
