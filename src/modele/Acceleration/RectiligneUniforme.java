@@ -8,9 +8,14 @@ import java.util.Vector;
 
 /**
  * Created by Zachizac on 21/02/2017.
+ * Classe de decoration acceleration de rectiligne uniforme pour les billes nues
  */
 public class RectiligneUniforme extends Decorateur {
 
+    /**
+     * Constructeur de mouvement rectiligne uniforme
+     * @param b bille subissant ce mouvement
+     */
     public RectiligneUniforme(Bille b) {
         super(b);
         bille=b;

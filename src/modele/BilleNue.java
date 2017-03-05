@@ -7,6 +7,8 @@ import java.util.Vector;
 
 /**
  * Created by Zachizac on 22/02/2017.
+ * Classe bille nue qui etend la classe Bille. Les billes nues sont des billes sans aucun decorateurs, elles sont la
+ * base de toute nouvelle bille.
  */
 public class BilleNue extends Bille{
 

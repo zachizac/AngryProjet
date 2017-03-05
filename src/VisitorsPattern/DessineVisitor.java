@@ -6,23 +6,26 @@ import java.awt.*;
 
 /**
  * Created by Zachizac on 04/03/2017.
+ * Classe du visitor que nous avons implementer pour gerer le dessin des billes independamment du modele de l'application.
  */
 public class DessineVisitor implements IVisitor {
 
+    //un attribut graphics pour permettre la creation des oval sur le panel
     Graphics g;
 
     /**
      * constructeur du visitor qui prend un parametre pour l'affichage
-     *
      * @param graphics
      */
     public DessineVisitor(Graphics graphics) {
         this.g = graphics;
     }
+    public DessineVisitor(){}
 
-    public DessineVisitor() {
-    }
-
+    /**
+     * methode setGraphics pour permettre de dessiner les billes grace a une boucle de rendu
+     * @param g
+     */
     public void setGraphics(Graphics g) {
         this.g = g;
     }
@@ -31,7 +34,7 @@ public class DessineVisitor implements IVisitor {
      * Anciennement methode dessine presente dans la classe bille et qui affiche les billes sur le billard
      * remplacer par un visiteur et donc cette methode visite maintenant la classe bille pour l'affichage
      * independance de la vue et du modele ainsi mieux respectee
-     *
+     * la methode en elle meme n'a pas changee
      * @param b la bille a afficher
      */
     public void visit(Bille b) {

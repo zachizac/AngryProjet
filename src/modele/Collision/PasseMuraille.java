@@ -8,6 +8,7 @@ import java.util.Vector;
 
 /**
  * Created by Zachizac on 22/02/2017.
+ * Classe de decoration collision pour les billes ne reagissent pas aux bords et qui apparaissent de l'autre cote du cadre
  */
 public class PasseMuraille extends Decorateur {
 
@@ -21,9 +22,7 @@ public class PasseMuraille extends Decorateur {
     }
 
     @Override
-    public void gestionAcceleration(Vector<Bille> billes) {
-
-    }
+    public void gestionAcceleration(Vector<Bille> billes) {}
 
     /**
      * Methode collisionContour qui determine comment une bille reagit a une collision avec le cadre : ici la bille traverse les parois et arrive de l'autre cote

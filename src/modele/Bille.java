@@ -38,6 +38,7 @@ public abstract class Bille implements IVisitable {
         this.couleur=b.couleur;
         this.clef=b.clef;
     }
+
     public Bille(Vecteur position, double rayon, Vecteur vitesse,
                  Vecteur acceleration, Color couleur){
         this.position = position;
@@ -117,10 +118,24 @@ public abstract class Bille implements IVisitable {
         return OutilsBille.gestionCollisionBilleBille(this, billes);
     }
 
+    /**
+     * methode gestion Acceleration qui gere l'acceleration de la bille en fonction de ses decorateurs.
+     * cette methode est redefinie par les decorateur du package acceleration.
+     * elle est neanmoins instancie ici en placant l'acceleration a nul.
+     * @param billes
+     */
    public void gestionAcceleration(Vector<Bille> billes){
         this.getAcceleration().set(Vecteur.VECTEURNUL);
     };
 
+    /**
+     * methode collisionContour abstract qui gere les collisions des billes avec le cadre en fonction de leur decorateur
+     * cette methode est implementee par les decorateurs du package collision.
+     * @param abscisseCoinHautGauche
+     * @param ordonneeCoinHautGauche
+     * @param largeur
+     * @param hauteur
+     */
     public abstract void collisionContour(double abscisseCoinHautGauche, double ordonneeCoinHautGauche, double largeur, double hauteur);
 
     /**

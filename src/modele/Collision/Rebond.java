@@ -8,6 +8,7 @@ import java.util.Vector;
 
 /**
  * Created by Zachizac on 22/02/2017.
+ * Classe de decoration collision pour les billes rebondissant sur les bords du cadre
  */
 public class Rebond extends Decorateur{
 
@@ -21,9 +22,7 @@ public class Rebond extends Decorateur{
     }
 
     @Override
-    public void gestionAcceleration(Vector<Bille> billes) {
-        bille.gestionAcceleration(billes);
-    }
+    public void gestionAcceleration(Vector<Bille> billes) {}
 
     /**
      * Methode collisionContour qui determine comment une bille reagit a une collision avec le cadre : ici, la bille rebondit sur les paroi

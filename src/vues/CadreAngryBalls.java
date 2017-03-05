@@ -65,9 +65,10 @@ public class CadreAngryBalls extends Frame implements VueBillard {
 
     /**
      * methode miseAJour redefinie pour l'affichage actif
+     * on abandonne l'utilisation de la methode repaint() pour la methode maison de boucle de rendu
      */
     public void miseAJour() {
-        this.billard.myRenderingLoop();
+        this.billard.renderingLoop();
     }
 
     @Override

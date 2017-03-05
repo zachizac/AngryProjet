@@ -8,10 +8,13 @@ import java.util.Vector;
 
 /**
  * Created by Zachizac on 21/02/2017.
+ * Classe de decoration acceleration de pesanteur pour les billes nues
  */
 public class Pesanteur extends Decorateur{
 
+    //attribut de pesanteur qui modifie l'acceleration des billes vers le bas
     private Vecteur pesanteur;
+
     /**
      * Constructeur de pesanteur
      * @param b la bille supportant la pesanteur

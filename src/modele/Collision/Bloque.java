@@ -8,6 +8,7 @@ import java.util.Vector;
 
 /**
  * Created by Zachizac on 22/02/2017.
+ * Classe de decoration collision pour les billes se bloquant sur les bords du cadre
  */
 public class Bloque extends Decorateur{
 
@@ -21,9 +22,7 @@ public class Bloque extends Decorateur{
     }
 
     @Override
-    public void gestionAcceleration(Vector<Bille> billes) {
-
-    }
+    public void gestionAcceleration(Vector<Bille> billes) {}
 
     /**
      * Methode collisionContour qui determine comment une bille reagit a une collision avec le cadre : ici la bille se bloque contre les parois

@@ -8,6 +8,7 @@ import java.util.Vector;
 
 /**
  * Created by Zachizac on 21/02/2017.
+ * Classe de decoration acceleration de frottement visqueux pour les billes nues
  */
 public class FrottementVisqueux extends Decorateur {
 

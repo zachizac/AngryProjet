@@ -89,6 +89,7 @@ public class TestAngryBalls {
 
 //-------------------------ajoute des observateurs sur les deux boutons observables ------------------------------
 
+        //nous ajoutons les boutons aux observers pour implementer le DP
         cadre.lancerBilles.addObserver(ecouteurBoutonLancer);
         cadre.arreterBilles.addObserver(ecouteurBoutonArreter);
 
