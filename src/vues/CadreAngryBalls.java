@@ -44,7 +44,7 @@ public class CadreAngryBalls extends Frame implements VueBillard {
         this.presentation.setEditable(false);
         this.haut.add(this.presentation);
 
-        this.billard = new Billard(billes, this);
+        this.billard = new Billard(billes);
         this.add(this.billard);
 
         this.lancerBilles = new ViewButton(new Button("lancer les billes"));

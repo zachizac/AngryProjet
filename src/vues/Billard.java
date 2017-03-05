@@ -14,12 +14,10 @@ import modele.Bille;
  */
 public class Billard extends Canvas {
     Vector<Bille> billes;
-    Frame f;
     DessineVisitor visitor = new DessineVisitor();
 
-    public Billard(Vector<Bille> billes, Frame f) {
+    public Billard(Vector<Bille> billes) {
         this.billes = billes;
-        this.f = f;
     }
 
     @Override
@@ -33,13 +31,16 @@ public class Billard extends Canvas {
 
     public void myRenderingLoop() {
         Graphics g = this.getGraphics();
+
+        g.setColor(Color.white);
+        g.fillRect(0,0,getWidth(),getHeight());
         visitor.setGraphics(g);
 
         for (Bille b : billes) {
             b.accept(visitor);
         }
 
-        this.repaint();
+
         g.dispose();
     }
 }
