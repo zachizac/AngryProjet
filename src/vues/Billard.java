@@ -34,29 +34,23 @@ public class Billard extends Canvas {
 
         for (i = 0; i < this.billes.size(); ++i)
             this.billes.get(i).accept(visitor);
-        //this.billes.get(i).dessine(graphics);
-
-        //System.out.println("billes dans le billard = " + billes);
+        for(Bille b : billes){
+            b.accept(visitor);
+        }
     }
 
     public void myRenderingLoop() {
         int i;
 
-//        while (true) {
         Graphics g = this.getGraphics();
         visitor.setGraphics(g);
-//        DessineVisitor visitor = new DessineVisitor(g);
-
-//        for ( i = 0; i < this.billes.size(); ++i) {
-//            this.billes.get(i).accept(visitor);
-//        }
 
         for (Bille b : billes) {
             b.accept(visitor);
         }
 
+        this.repaint();
         g.dispose();
 
-//        }
     }
 }
