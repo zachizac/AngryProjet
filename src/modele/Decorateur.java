@@ -1,7 +1,5 @@
 package modele;
 
-import mesmaths.geometrie.base.Vecteur;
-
 import java.util.Vector;
 
 /**
@@ -11,7 +9,6 @@ public abstract class Decorateur extends Bille{
 
     protected Bille bille;
 
-    public Decorateur(){}
     public Decorateur(Bille b){
         super(b);
     }

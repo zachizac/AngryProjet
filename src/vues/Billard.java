@@ -1,7 +1,6 @@
 package vues;
 
 import java.awt.*;
-import java.awt.image.BufferStrategy;
 import java.util.Vector;
 
 import VisitorsPattern.DessineVisitor;
@@ -23,17 +22,10 @@ public class Billard extends Canvas {
         this.f = f;
     }
 
-    /* (non-Javadoc)
-     * @see java.awt.Canvas#paint(java.awt.Graphics)
-     */
     @Override
     public void paint(Graphics graphics) {
-        int i;
-
         DessineVisitor visitor = new DessineVisitor(graphics);
 
-        for (i = 0; i < this.billes.size(); ++i)
-            this.billes.get(i).accept(visitor);
         for(Bille b : billes){
             b.accept(visitor);
         }
@@ -49,6 +41,5 @@ public class Billard extends Canvas {
 
         this.repaint();
         g.dispose();
-
     }
 }

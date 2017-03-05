@@ -82,17 +82,15 @@ public class TestAngryBalls {
 
         AnimationBilles animationBilles = new AnimationBilles(billes, cadre);
 
-//----------------------- mise en place des ecouteurs de boutons qui permettent de contreler (un peu...) l'application -----------------
+//----------------------- Creéation des observateurs -----------------
 
         EcouteurBoutonLancer ecouteurBoutonLancer = new EcouteurBoutonLancer(animationBilles);
         EcouteurBoutonArreter ecouteurBoutonArreter = new EcouteurBoutonArreter(animationBilles);
 
+//-------------------------ajoute des observateurs sur les deux boutons observables ------------------------------
+
         cadre.lancerBilles.addObserver(ecouteurBoutonLancer);
         cadre.arreterBilles.addObserver(ecouteurBoutonArreter);
-//------------------------- activation des ecouteurs des boutons et ea tourne tout seul ------------------------------
-
-//        cadre.lancerBilles.addActionListener(ecouteurBoutonLancer);             // maladroit mais ne changez rien
-//        cadre.arreterBilles.addActionListener(ecouteurBoutonArreter);           // maladroit mais ne changez rien
 
     }
 }

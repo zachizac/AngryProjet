@@ -1,6 +1,5 @@
 package modele.Acceleration;
 
-import mesmaths.geometrie.base.Vecteur;
 import mesmaths.mecanique.MecaniquePoint;
 import modele.Bille;
 import modele.Decorateur;

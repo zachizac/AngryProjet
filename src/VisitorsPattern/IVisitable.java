@@ -1,6 +1,5 @@
 package VisitorsPattern;
 
-import java.awt.*;
 
 /**
  * Created by Zachizac on 04/03/2017.
