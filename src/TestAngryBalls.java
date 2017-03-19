@@ -11,6 +11,7 @@ import modele.Acceleration.RectiligneUniforme;
 import modele.Bille;
 import modele.BilleNue;
 import modele.Collision.Bloque;
+import modele.Collision.Grossissement;
 import modele.Collision.PasseMuraille;
 import modele.Collision.Rebond;
 import modele.OutilsBille;
@@ -74,7 +75,7 @@ public class TestAngryBalls {
         billes.add(new Pesanteur(new FrottementVisqueux(new Rebond(new BilleNue(p1, rayon, v1, Color.yellow))), new Vecteur(0,0.001)));
         billes.add(new AttractionUniverselle(new FrottementVisqueux(new Rebond(new BilleNue(p2, rayon, v2, Color.green)))));
         billes.add(new RectiligneUniforme(new PasseMuraille(new BilleNue(p3, rayon, v3, Color.cyan))));
-        billes.add(new AttractionUniverselle(new Bloque(new BilleNue(p4, rayon, v4, Color.black))));
+        billes.add(new AttractionUniverselle(new Grossissement(new BilleNue(p4, rayon, v4, Color.black))));
 
 //---------------------- ici finit la partie e changer -------------------------------------------------------------
 

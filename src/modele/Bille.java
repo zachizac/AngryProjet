@@ -63,6 +63,8 @@ public abstract class Bille implements IVisitable {
         return this.rayon;
     }
 
+    public void incRayon(int r){ this.rayon = this.rayon + r; }
+
 
     /**
      * @return the vitesse

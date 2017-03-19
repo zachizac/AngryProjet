@@ -19,7 +19,7 @@ import vues.CadreAngryBalls;
 
 public class OutilsBille {
 
-    private static File son;
+    static AudioClip pouetSon;
 
     /**
      * @param billes     est la liste de TOUTES les billes en mouvement
@@ -71,17 +71,6 @@ public class OutilsBille {
             billeCourante = autresBilles.get(i);
             if (Collisions.CollisionBilleBille(cetteBille.getPosition(), cetteBille.getRayon(), cetteBille.getVitesse(), cetteBille.masse(),
                     billeCourante.getPosition(), billeCourante.getRayon(), billeCourante.getVitesse(), billeCourante.masse())) {
-                //gestion du son de collision grace a l'objet audioClip
-                //creation à l'initialisation pour ne pas surcharger l'appel
-                AudioClip pouetSon = null;
-                try
-                {
-                    pouetSon = Applet.newAudioClip(son.toURI().toURL());
-                }
-                catch (MalformedURLException e)
-                {
-                    System.out.println(e.getMessage());
-                }
                 pouetSon.play();
                 return true;
             }
@@ -90,7 +79,19 @@ public class OutilsBille {
     }
 
     public static void creeSonCollision(){
-        son = new File("pouet.wav");
+        //gestion du son de collision grace a l'objet audioClip
+        //creation à l'initialisation pour ne pas surcharger l'appel
+        File son = new File("pouet.wav");
+        pouetSon = null;
+        try
+        {
+            pouetSon = Applet.newAudioClip(son.toURI().toURL());
+        }
+        catch (MalformedURLException e)
+        {
+            System.out.println(e.getMessage());
+        }
+
     }
 
 
