@@ -28,7 +28,7 @@ public class Grossissement extends Decorateur{
     }
 
     @Override
-    public void gestionAcceleration(Vector<Bille> billes) {}
+    public void gestionAcceleration(Vector<Bille> billes) { bille.getAcceleration();}
 
     /**
      * Methode collisionContour qui determine comment une bille reagit a une collision avec le cadre : ici la bille se bloque contre les parois

@@ -4,10 +4,7 @@ import java.util.Vector;
 
 import mesmaths.geometrie.base.Vecteur;
 
-import modele.Acceleration.AttractionUniverselle;
-import modele.Acceleration.FrottementVisqueux;
-import modele.Acceleration.Pesanteur;
-import modele.Acceleration.RectiligneUniforme;
+import modele.Acceleration.*;
 import modele.Bille;
 import modele.BilleNue;
 import modele.Collision.Bloque;
@@ -50,7 +47,7 @@ public class TestAngryBalls {
 
         double rayon = 0.05 * Math.min(xMax, yMax); // rayon des billes : ici toutes les billes ont le meme rayon, mais ce n'est pas obligatoire
 
-        Vecteur p0, p1, p2, p3, p4, v0, v1, v2, v3, v4;    // les positions des centres des billes et les vecteurs vitesse au demarrage.
+        Vecteur p0, p1, p2, p3, p4,p5, v0, v1, v2, v3, v4,v5;    // les positions des centres des billes et les vecteurs vitesse au demarrage.
         // Elles vont etre choisies aleatoirement
 
 //------------------- creation des vecteurs position des billes ---------------------------------
@@ -60,6 +57,7 @@ public class TestAngryBalls {
         p2 = Vecteur.créationAléatoire(0, 0, xMax, yMax);
         p3 = Vecteur.créationAléatoire(0, 0, xMax, yMax);
         p4 = Vecteur.créationAléatoire(0, 0, xMax, yMax);
+        p5 = Vecteur.créationAléatoire(0, 0, xMax, yMax);
 
 //------------------- creation des vecteurs vitesse des billes ---------------------------------
 
@@ -68,14 +66,16 @@ public class TestAngryBalls {
         v2 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, vMax);
         v3 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, vMax);
         v4 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, vMax);
+        v5 = Vecteur.créationAléatoire(-vMax, -vMax, vMax, vMax);
 
 //--------------- ici commence la partie e changer ---------------------------------
 
-        billes.add(new RectiligneUniforme(new Rebond(new BilleNue(p0, rayon, v0, Color.red))));
-        billes.add(new Pesanteur(new FrottementVisqueux(new Rebond(new BilleNue(p1, rayon, v1, Color.yellow))), new Vecteur(0,0.001)));
-        billes.add(new AttractionUniverselle(new FrottementVisqueux(new Rebond(new BilleNue(p2, rayon, v2, Color.green)))));
-        billes.add(new RectiligneUniforme(new PasseMuraille(new BilleNue(p3, rayon, v3, Color.cyan))));
-        billes.add(new AttractionUniverselle(new Grossissement(new BilleNue(p4, rayon, v4, Color.black))));
+//        billes.add(new RectiligneUniforme(new Rebond(new BilleNue(p0, rayon, v0, Color.red))));
+//        billes.add(new Pesanteur(new FrottementVisqueux(new Rebond(new BilleNue(p1, rayon, v1, Color.yellow))), new Vecteur(0,0.001)));
+//        billes.add(new AttractionUniverselle(new FrottementVisqueux(new Rebond(new BilleNue(p2, rayon, v2, Color.green)))));
+//        billes.add(new RectiligneUniforme(new PasseMuraille(new BilleNue(p3, rayon, v3, Color.cyan))));
+//        billes.add(new AttractionUniverselle(new Grossissement(new BilleNue(p4, rayon, v4, Color.black))));
+        billes.add(new MouvementCoin((new Rebond(new Bloque(new BilleNue(p5, rayon, v5, Color.PINK))))));
 
 //---------------------- ici finit la partie e changer -------------------------------------------------------------
 
