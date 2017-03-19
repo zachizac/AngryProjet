@@ -70,8 +70,8 @@ public class Grossissement extends Decorateur{
         int i;
         for ( i = 1; i < coins.length; ++i)
             if (collisionBilleSegmentAvecRebond(position, rayon, vitesse, coins[i-1], coins[i])) {
-                if (inc) this.incRayon(1);
-                else this.incRayon(-1);
+                if (inc) this.incRayon(2);
+                else this.incRayon(-2);
                 return;
             }
 
