@@ -9,6 +9,7 @@ import java.util.Vector;
 import mesmaths.cinematique.Collisions;
 import mesmaths.geometrie.base.Vecteur;
 import mesmaths.mecanique.MecaniquePoint;
+import vues.CadreAngryBalls;
 
 /**
  * Operations utiles sur les billes
@@ -17,6 +18,9 @@ import mesmaths.mecanique.MecaniquePoint;
  */
 
 public class OutilsBille {
+
+    private static File son;
+
     /**
      * @param billes     est la liste de TOUTES les billes en mouvement
      * @param cetteBille est l'une d'entre elles.
@@ -67,23 +71,26 @@ public class OutilsBille {
             billeCourante = autresBilles.get(i);
             if (Collisions.CollisionBilleBille(cetteBille.getPosition(), cetteBille.getRayon(), cetteBille.getVitesse(), cetteBille.masse(),
                     billeCourante.getPosition(), billeCourante.getRayon(), billeCourante.getVitesse(), billeCourante.masse())) {
-
                 //gestion du son de collision grace a l'objet audioClip
-                File son = new File("pouet.wav");
-                AudioClip clip = null;
+                //creation à l'initialisation pour ne pas surcharger l'appel
+                AudioClip pouetSon = null;
                 try
                 {
-                    clip = Applet.newAudioClip(son.toURI().toURL());
+                    pouetSon = Applet.newAudioClip(son.toURI().toURL());
                 }
                 catch (MalformedURLException e)
                 {
                     System.out.println(e.getMessage());
                 }
-                clip.play();
+                pouetSon.play();
                 return true;
             }
         }
         return false;
+    }
+
+    public static void creeSonCollision(){
+        son = new File("pouet.wav");
     }
 
 

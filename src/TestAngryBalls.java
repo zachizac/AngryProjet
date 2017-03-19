@@ -1,3 +1,4 @@
+
 import java.awt.Color;
 import java.util.Vector;
 
@@ -12,6 +13,7 @@ import modele.BilleNue;
 import modele.Collision.Bloque;
 import modele.Collision.PasseMuraille;
 import modele.Collision.Rebond;
+import modele.OutilsBille;
 import vues.CadreAngryBalls;
 
 /**
@@ -92,6 +94,9 @@ public class TestAngryBalls {
         //nous ajoutons les boutons aux observers pour implementer le DP
         cadre.lancerBilles.addObserver(ecouteurBoutonLancer);
         cadre.arreterBilles.addObserver(ecouteurBoutonArreter);
+
+        //creer son collision
+        OutilsBille.creeSonCollision();
 
     }
 }
