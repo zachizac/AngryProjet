@@ -1,5 +1,9 @@
 package modele;
 
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.io.File;
+import java.net.MalformedURLException;
 import java.util.Vector;
 
 import mesmaths.cinematique.Collisions;
@@ -62,8 +66,22 @@ public class OutilsBille {
         for (i = 0; i < autresBilles.size(); ++i) {
             billeCourante = autresBilles.get(i);
             if (Collisions.CollisionBilleBille(cetteBille.getPosition(), cetteBille.getRayon(), cetteBille.getVitesse(), cetteBille.masse(),
-                    billeCourante.getPosition(), billeCourante.getRayon(), billeCourante.getVitesse(), billeCourante.masse()))
+                    billeCourante.getPosition(), billeCourante.getRayon(), billeCourante.getVitesse(), billeCourante.masse())) {
+
+                //gestion du son de collision grace a l'objet audioClip
+                File son = new File("pouet.wav");
+                AudioClip clip = null;
+                try
+                {
+                    clip = Applet.newAudioClip(son.toURI().toURL());
+                }
+                catch (MalformedURLException e)
+                {
+                    System.out.println(e.getMessage());
+                }
+                clip.play();
                 return true;
+            }
         }
         return false;
     }
