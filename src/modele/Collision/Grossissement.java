@@ -41,7 +41,7 @@ public class Grossissement extends Decorateur{
     public void collisionContour(double abscisseCoinHautGauche,
                                  double ordonneeCoinHautGauche, double largeur, double hauteur)
     {
-        if(rayonBase != 0 && this.getRayon()!=0.0){
+        if(rayonBase == 0 && this.getRayon()!=0.0){
             rayonBase = this.getRayon();
         }
 
@@ -53,7 +53,6 @@ public class Grossissement extends Decorateur{
                 inc = true;
             }
         }
-
 
         Vecteur min = new Vecteur(abscisseCoinHautGauche,ordonneeCoinHautGauche);
         Vecteur diago = new Vecteur(largeur, hauteur);
